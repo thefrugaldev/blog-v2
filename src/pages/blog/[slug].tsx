@@ -2,14 +2,12 @@ import React, { FC } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import remark from 'remark';
 import html from 'remark-html';
-import { getPostBySlug, getAllPosts } from '../lib/blog';
+import { getPostBySlug, getAllPosts } from '../../lib/blog';
+import markdownToHtml from '../../lib/markdown';
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const post = getPostBySlug(params.slug);
-  const markdown = await remark()
-    .use(html)
-    .process(post.content || '');
-  const content = markdown.toString();
+  const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
