@@ -1,0 +1,9 @@
+import { AppProps } from 'next/dist/next-server/lib/router/router';
+import React, { FC } from 'react';
+// import type { AppProps } from 'next/app';
+
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
+
+export default App;

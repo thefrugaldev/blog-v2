@@ -3,9 +3,9 @@ import { parseISO, format } from 'date-fns';
 import fs from 'fs';
 import { join } from 'path';
 
-const postsDirectory = join(process.cwd(), 'src', 'content', 'blog');
+const postsDirectory = join(process.cwd(), 'content', 'blog');
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug) {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');

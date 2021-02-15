@@ -1,10 +1,10 @@
 import remark from 'remark';
 import html from 'remark-html';
 
-const markdownToHtml = async (markdown: string) => {
+const markdownToHtml = async (markdown: any) => {
   const result = await remark().use(html).process(markdown);
 
-  return result;
+  return result.toString();
 };
 
 export default markdownToHtml;
