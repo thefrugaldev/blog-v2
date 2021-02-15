@@ -5,7 +5,7 @@ import { join } from 'path';
 
 const postsDirectory = join(process.cwd(), 'content', 'blog');
 
-export function getPostBySlug(slug) {
+export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');

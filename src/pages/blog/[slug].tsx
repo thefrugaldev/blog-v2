@@ -6,7 +6,8 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug as string);
+  console.log(`post: `, post);
   const content = await markdownToHtml(post.content || '');
 
   return {
@@ -32,26 +33,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const BlogPostPage: FC<{ post: any }> = ({ post }) => {
-  console.log(`post`);
+const BlogPostPage: FC<{
+  content: any;
+  frontmatter: any;
+  slug: string;
+  excerpt: any;
+}> = ({ content, frontmatter, slug, excerpt }) => {
+  console.log(content);
 
   return (
     <Layout>
       <h1>Test Page</h1>
-      {/* <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description || excerpt}
         image={''}
       />
       <article>
         <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1>{frontmatter.title}</h1>
+          <p>{frontmatter.date}</p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.content }}></section>
+        <section dangerouslySetInnerHTML={{ __html: content }}></section>
         <hr />
         <footer>Bio component</footer>
-      </article> */}
+      </article>
     </Layout>
   );
 };
