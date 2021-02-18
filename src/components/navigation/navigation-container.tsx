@@ -4,11 +4,11 @@ import NavigationItem from './navigation-item';
 const NavigationContainer = () => {
   return (
     <ul>
-      <NavigationItem name={'Home'} route={'/'} />
-      <NavigationItem name={'Blog'} route={'/blog'} />
-      <NavigationItem name={'Uses'} route={'/uses'} />
-      <NavigationItem name={'Projects'} route={'/projects'} />
-      <NavigationItem name={'About'} route={'/about'} />
+      <NavigationItem name="Home Page" route={'/'} icon={`Home`} />
+      <NavigationItem name="Blog" route={'/blog'} icon={`BookOpen`} />
+      <NavigationItem name="Uses" route={'/uses'} icon={`Terminal`} />
+      <NavigationItem name="Projects" route={'/projects'} icon={`Codepen`} />
+      <NavigationItem name="About" route={'/about'} icon={`User`} />
     </ul>
   );
 };

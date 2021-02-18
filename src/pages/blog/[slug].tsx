@@ -9,7 +9,6 @@ import { Post } from '../../interfaces/post';
 const BlogPostPage: FC<Post> = (post: Post) => {
   return (
     <Layout>
-      <h1>Test Page</h1>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

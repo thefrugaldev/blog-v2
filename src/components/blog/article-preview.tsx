@@ -9,7 +9,7 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
     <article itemScope itemType="http://schema.org/Article">
       <header>
         <h2>
-          <Link href={`/${post.slug}`}>
+          <Link href={`/blog/${post.slug}`}>
             <a itemProp="url">
               <span itemProp="headline">{title}</span>
             </a>
