@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
+import Layout from '../components/layout';
 
 const HomePage: FC = () => {
   return (
-    <div className="mx-auto max-w-sm">
+    <Layout>
       <h1>Welcome to my blog!</h1>
-    </div>
+    </Layout>
   );
 };
 

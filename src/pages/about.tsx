@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import Layout from '../components/layout';
 
 const AboutPage: FC = () => {
-  return <div>About page</div>;
+  return <Layout>About page</Layout>;
 };
 
 export default AboutPage;
