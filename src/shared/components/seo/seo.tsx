@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
-import config from '../config';
+import config from '../../../config';
 
 const SEO: FC<{ description: string; title: string; image: string }> = ({
   description,

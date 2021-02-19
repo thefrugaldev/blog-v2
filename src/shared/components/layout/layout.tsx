@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import NavigationContainer from './navigation/navigation-container';
+import NavigationContainer from '../navigation/navigation-container';
 
 const Layout: FC = ({ children }) => {
   return (

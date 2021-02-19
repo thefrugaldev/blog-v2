@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { getPostBySlug, getAllPosts } from '../../lib/blog';
 import markdownToHtml from '../../lib/markdown';
-import Layout from '../../components/layout';
-import SEO from '../../components/seo';
+import Layout from '../../shared/components/layout';
+import SEO from '../../shared/components/seo/seo';
 import { Post } from '../../interfaces/post';
 
 const BlogPostPage: FC<Post> = (post: Post) => {
