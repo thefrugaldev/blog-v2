@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import NavigationContainer from '../navigation/navigation-container';
+import Header from './components/header/header';
 
 const Layout: FC = ({ children }) => {
   return (
-    <div className="bg-dark">
-      <div className="container mx-auto flex">
-        <NavigationContainer />
-        <main className="flex-auto">{children}</main>
+    <div className="bg-primary">
+      <div className="container mx-auto">
+        <Header />
+        <main>{children}</main>
       </div>
     </div>
   );
