@@ -3,8 +3,8 @@ import Header from './components/header/header';
 
 const Layout: FC = ({ children }) => {
   return (
-    <div className="bg-primary">
-      <div className="container mx-auto">
+    <div>
+      <div className="max-w-screen-lg m-auto h-screen">
         <Header />
         <main>{children}</main>
       </div>
