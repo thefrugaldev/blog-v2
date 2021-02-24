@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 
 const ThemeSwitchWrapper = styled.div`
@@ -20,41 +20,11 @@ const ThemeSwitch = styled.label`
   input {
     display: none;
 
-    &::checked + .slider {
+    &:checked + .slider {
       background-color: #66bb6a;
 
       &:before {
         transform: translateX(26px);
-      }
-    }
-  }
-
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: 0.4s;
-
-    &:before {
-      background-color: #fff;
-      bottom: 4px;
-      content: '';
-      height: 26px;
-      left: 4px;
-      position: absolute;
-      transition: 0.4s;
-      width: 26px;
-    }
-
-    &.round {
-      border-radius: 34px;
-
-      &:before {
-        border-radius: 50%;
       }
     }
   }
@@ -90,9 +60,12 @@ const Slider = styled.div`
   }
 `;
 
-const DarkModeToggle = () => {
+const DarkModeToggle: FC = () => {
+  const [active, setActive] = useState(false);
+
   const handleChange = () => {
-    console.log(`clicked`);
+    setActive(!active);
+    console.log(active);
   };
 
   return (
@@ -101,10 +74,10 @@ const DarkModeToggle = () => {
         <input
           type="checkbox"
           id="checkbox"
-          onChange={(e) => handleChange(e)}
+          checked={active}
+          onChange={handleChange}
         />
-        <div className="slider round" onClick={handleChange}></div>
-        {/* <Slider onClick={handleChange}></Slider> */}
+        <Slider className="slider round"></Slider>
       </ThemeSwitch>
       <em>Enable Dark Mode!</em>
     </ThemeSwitchWrapper>
