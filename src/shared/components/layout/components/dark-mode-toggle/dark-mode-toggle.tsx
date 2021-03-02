@@ -60,12 +60,20 @@ const Slider = styled.div`
   }
 `;
 
-const DarkModeToggle: FC = () => {
+interface DarkModeToggleProps {
+  onToggle: (isDarkMode: boolean) => void;
+}
+
+const DarkModeToggle: FC<DarkModeToggleProps> = ({
+  onToggle: handleToggle,
+}) => {
   const [active, setActive] = useState(false);
 
   const handleChange = () => {
-    setActive(!active);
-    console.log(active);
+    const activeState = !active;
+
+    setActive(activeState);
+    handleToggle(activeState);
   };
 
   return (

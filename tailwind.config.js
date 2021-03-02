@@ -13,14 +13,25 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#DB3EB1',
-        subhead: '#41b6e6',
-        info: '#b085f4',
-        success: '#00cc88',
-        warning: '#f9d800',
-        dark: '#0e2430',
-        light: '#fefefe',
+        // LIGHT MODE
+        primary: '#EC092F',
+        subhead: '#FFEC41',
+        info: '#7932EC',
+        success: '#00B87A',
+        warning: '#EC9D09',
+        dark: '#0E2430',
+        light: '#FEFEFE',
       },
+      // colors: {
+      //   // DARK MODE
+      //   primary: '#F8425F',
+      //   subhead: '#FFEC41',
+      //   info: '#B085F4',
+      //   success: '#00CC88',
+      //   warning: '#F8B53A',
+      //   dark: '#0E2430',
+      //   light: '#FEFEFE',
+      // },
     },
   },
   variants: {
