@@ -1,6 +1,8 @@
+const theme = require('./theme');
+
 module.exports = {
   purge: ['./src/**/*.html', './src/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     screens: {
       sm: '480px',
@@ -13,25 +15,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        // LIGHT MODE
-        primary: '#EC092F',
-        subhead: '#FFEC41',
-        info: '#7932EC',
-        success: '#00B87A',
-        warning: '#EC9D09',
-        dark: '#0E2430',
-        light: '#FEFEFE',
+        primary: theme.palette.primary,
+        subhead: theme.palette.subhead,
+        info: theme.palette.info,
+        darkInfo: theme.palette.darkInfo,
+        success: theme.palette.success,
+        darkSuccess: theme.palette.darkSuccess,
+        warning: theme.palette.warning,
+        darkWarning: theme.palette.darkWarning,
+        light: theme.palette.light,
+        dark: theme.palette.dark,
       },
-      // colors: {
-      //   // DARK MODE
-      //   primary: '#F8425F',
-      //   subhead: '#FFEC41',
-      //   info: '#B085F4',
-      //   success: '#00CC88',
-      //   warning: '#F8B53A',
-      //   dark: '#0E2430',
-      //   light: '#FEFEFE',
-      // },
     },
   },
   variants: {

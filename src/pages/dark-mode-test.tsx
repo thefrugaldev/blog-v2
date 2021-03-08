@@ -10,18 +10,21 @@ const DarkModeTestPage: FC = () => {
   };
 
   return (
-    <Layout isDarkMode={isDarkMode}>
-      <DarkModeToggle onToggle={handleToggle} />
-      <h1 className="text-primary">Dark Mode Test</h1>
-      <p className="text-light">Test out dark and light mode here!</p>
+    <Layout>
+      <h1 className="dark:text-primary">Dark Mode Test</h1>
+      <h2 className="dark:text-subhead">Test your dark mode out here</h2>
       <div>
-        <p className="text-warning">This is the warning text</p>
+        <p className="text-warning dark:text-darkWarning">
+          This is the warning text
+        </p>
       </div>
       <div>
-        <p className="text-info">This is the info text</p>
+        <p className="text-info dark:text-darkInfo">This is the info text</p>
       </div>
       <div>
-        <p className="text-success">This is the success text</p>
+        <p className="text-success dark:text-darkSuccess">
+          This is the success text
+        </p>
       </div>
     </Layout>
   );
