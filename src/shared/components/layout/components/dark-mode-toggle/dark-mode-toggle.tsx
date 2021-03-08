@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
+import { useDarkMode } from '../../../../../lib/state/dark-mode';
 import FlashlightSvg from '../../../../assets/vectors/flashlight';
 
 const ThemeSwitchWrapper = styled.div`
@@ -37,21 +38,9 @@ const FlashlightWrapper = styled.div`
   cursor: pointer;
 `;
 
-interface DarkModeToggleProps {
-  onToggle: (isDarkMode: boolean) => void;
-}
-
-const DarkModeToggle: FC<DarkModeToggleProps> = ({
-  onToggle: handleToggle,
-}) => {
+const DarkModeToggle: FC = () => {
   const [active, setActive] = useState(false);
-
-  const handleChange = () => {
-    const activeState = !active;
-
-    setActive(activeState);
-    handleToggle(activeState);
-  };
+  const { setTheme, isDarkMode } = useDarkMode();
 
   return (
     <ThemeSwitchWrapper>
@@ -59,11 +48,11 @@ const DarkModeToggle: FC<DarkModeToggleProps> = ({
         <input
           type="checkbox"
           id="checkbox"
-          checked={active}
-          onChange={handleChange}
+          checked={isDarkMode}
+          onChange={setTheme}
         />
         <FlashlightWrapper>
-          <FlashlightSvg height={75} width={75} isOn={active} />
+          <FlashlightSvg height={75} width={75} isOn={isDarkMode} />
         </FlashlightWrapper>
       </ThemeSwitch>
     </ThemeSwitchWrapper>
