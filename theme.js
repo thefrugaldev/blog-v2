@@ -13,6 +13,14 @@ const palette = {
   dark: '#0E2430',
 };
 
+const getDarkMode = () => {
+  return localStorage.getItem('darkMode') === 'true' || false;
+};
+
+const setDarkMode = (isDarkMode) => {
+  localStorage.setItem('darkMode', isDarkMode);
+};
+
 module.exports = {
   lightTheme: {
     body: palette.light,
@@ -29,4 +37,6 @@ module.exports = {
   },
 
   palette,
+  getDarkMode,
+  setDarkMode,
 };

@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
+import FlashlightSvg from '../../../../assets/vectors/flashlight';
 
 const ThemeSwitchWrapper = styled.div`
   display: flex;
@@ -14,8 +15,9 @@ const ThemeSwitchWrapper = styled.div`
 const ThemeSwitch = styled.label`
   display: inline-block;
   height: 34px;
-  position: relative;
+  position: absolute;
   width: 60px;
+  right: 75px;
 
   input {
     display: none;
@@ -30,34 +32,9 @@ const ThemeSwitch = styled.label`
   }
 `;
 
-const Slider = styled.div`
-  background-color: #ccc;
-  bottom: 0;
+const FlashlightWrapper = styled.div`
+  margin: 2rem;
   cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-
-  &:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: '';
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: 0.4s;
-    width: 26px;
-  }
-
-  &.round {
-    border-radius: 34px;
-
-    &:before {
-      border-radius: 50%;
-    }
-  }
 `;
 
 interface DarkModeToggleProps {
@@ -85,9 +62,10 @@ const DarkModeToggle: FC<DarkModeToggleProps> = ({
           checked={active}
           onChange={handleChange}
         />
-        <Slider className="slider round"></Slider>
+        <FlashlightWrapper>
+          <FlashlightSvg height={75} width={75} isOn={active} />
+        </FlashlightWrapper>
       </ThemeSwitch>
-      <em>Enable Dark Mode!</em>
     </ThemeSwitchWrapper>
   );
 };
