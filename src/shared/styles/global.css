@@ -4,4 +4,16 @@
 
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&display=swap');
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-lg;
+  }
 }
