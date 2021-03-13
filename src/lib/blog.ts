@@ -1,7 +1,7 @@
 import matter from 'gray-matter';
 import { parseISO, format } from 'date-fns';
 import fs from 'fs';
-import { join } from 'path';
+import { join, basename } from 'path';
 
 const postsDirectory = join(process.cwd(), 'content', 'blog');
 
@@ -18,7 +18,11 @@ export function getPostBySlug(slug: string) {
 
 export function getAllPosts() {
   const slugs = fs.readdirSync(postsDirectory);
-  const posts = slugs.map((slug) => getPostBySlug(slug));
+
+  console.log(slugs);
+  const posts = slugs
+    .filter((slug) => !slug.toUpperCase().includes('DRAFT_'))
+    .map((slug) => getPostBySlug(slug));
 
   return posts;
 }
