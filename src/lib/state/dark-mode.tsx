@@ -2,7 +2,7 @@ import React, {
   createContext,
   FC,
   useContext,
-  useLayoutEffect,
+  useEffect,
   useState,
 } from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -22,7 +22,7 @@ export const useDarkMode = (): DarkModeContextProps =>
 const DarkModeProvider: FC = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setIsDarkMode(() => {
       return localStorage.getItem(`darkMode`) === 'true' || false;
     });

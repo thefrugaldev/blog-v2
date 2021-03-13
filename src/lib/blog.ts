@@ -7,7 +7,8 @@ const postsDirectory = join(process.cwd(), 'content', 'blog');
 
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(postsDirectory, realSlug, `index.md`);
+  // const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
   const date = format(parseISO(data.date), 'MMMM dd, yyyy');
