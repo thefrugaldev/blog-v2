@@ -20,11 +20,11 @@ export const GlobalStyles = createGlobalStyle`
         /* transition: all 0.25s linear; */
     }
 
-    h1 {
+    /* h1 {
         color: ${({ theme }) => theme.heading}
     }
 
     h2, h3, h4, h5 {
         color: ${({ theme }) => theme.subhead}
-    }
+    } */
 `;

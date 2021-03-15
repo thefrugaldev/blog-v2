@@ -46,7 +46,7 @@ export default class MyDocument extends Document<any> {
     return (
       <Html lang="en">
         <Head>{this.props.styleTags /*rendering the actual stylesheet*/}</Head>
-        <body>
+        <body className="font-light">
           <Main />
           <NextScript />
         </body>

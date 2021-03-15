@@ -33,7 +33,7 @@ module.exports = {
     body: palette.dark,
     text: palette.light,
     heading: palette.primary,
-    subhead: palette.subhead,
+    subhead: palette.info,
   },
 
   palette,
