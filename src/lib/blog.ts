@@ -1,5 +1,5 @@
 import matter from 'gray-matter';
-import { parseISO, format } from 'date-fns';
+import { parseISO, format, compareAsc } from 'date-fns';
 import fs from 'fs';
 import { join, basename } from 'path';
 
@@ -22,4 +22,15 @@ export function getAllPosts() {
     .map((slug) => getPostBySlug(slug));
 
   return posts;
+}
+
+export function getAllPostsByDate() {
+  const posts = getAllPosts();
+
+  return posts.sort((a, b) => {
+    return compareAsc(
+      new Date(b.frontmatter.date),
+      new Date(a.frontmatter.date)
+    );
+  });
 }
