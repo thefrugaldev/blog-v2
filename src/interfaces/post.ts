@@ -1,7 +1,9 @@
+import { MdxRemote } from 'next-mdx-remote/types';
+
 export interface Post {
   slug: string;
   frontmatter: Frontmatter;
-  content: string;
+  source: MdxRemote.Source;
   excerpt: string;
 }
 

@@ -2,12 +2,15 @@ import matter from 'gray-matter';
 import { parseISO, format, compareAsc } from 'date-fns';
 import fs from 'fs';
 import { join, basename } from 'path';
+import renderToString from 'next-mdx-remote/render-to-string';
+import { rehypePrism } from '@mapbox/rehype-prism';
 
 const postsDirectory = join(process.cwd(), 'content', 'blog');
 
 export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, realSlug, `index.md`);
+  const realSlug = slug.replace(/\.mdx$/, '');
+  // const fullPath = join(postsDirectory, realSlug, `index.md`);
+  const fullPath = join(postsDirectory, realSlug, `index.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
   const date = format(parseISO(data.date), 'MMMM dd, yyyy');
@@ -24,13 +27,13 @@ export function getAllPosts() {
   return posts;
 }
 
-export function getAllPostsByDate() {
-  const posts = getAllPosts();
+// export function getAllPostsByDate() {
+//   const posts = getAllPosts();
 
-  return posts.sort((a, b) => {
-    return compareAsc(
-      new Date(b.frontmatter.date),
-      new Date(a.frontmatter.date)
-    );
-  });
-}
+//   return posts.sort((a, b) => {
+//     return compareAsc(
+//       new Date(b.frontmatter.date),
+//       new Date(a.frontmatter.date)
+//     );
+//   });
+// }

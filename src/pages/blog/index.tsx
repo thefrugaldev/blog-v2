@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Layout from '../../shared/components/layout';
-import { getAllPosts, getAllPostsByDate } from '../../lib/blog';
+import { getAllPosts } from '../../lib/blog';
 import { Post } from '../../interfaces/post';
 import ArticlePreview from '../../scenes/blog/article-preview';
 import styled from 'styled-components';
@@ -20,7 +20,7 @@ const BlogPage: FC<{ posts: Post[] }> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPostsByDate();
+  const posts = getAllPosts();
 
   return {
     props: {
