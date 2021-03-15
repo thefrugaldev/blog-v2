@@ -6,7 +6,11 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
   const title = post.frontmatter.title || post.slug;
 
   return (
-    <article itemScope itemType="http://schema.org/Article">
+    <article
+      className="border-2 border-light p-10 rounded-lg"
+      itemScope
+      itemType="http://schema.org/Article"
+    >
       <header>
         <h2>
           <Link href={`/blog/${post.slug}`}>
