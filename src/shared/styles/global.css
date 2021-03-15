@@ -5,9 +5,9 @@
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;700&display=swap');
 
-  /* @import url('./prism/themes/prism-material-dark.css');
-  @import url('./prism/themes/prism-material-light.css'); */
-  @import url('./prism/themes/prism-tomorrow.css');
+  @import url('./prism/themes/prism-material-dark.css');
+  /* @import url('./prism/themes/prism-material-light.css'); */
+  /* @import url('./prism/themes/prism-tomorrow.css'); */
 
   h1 {
     @apply text-4xl;
