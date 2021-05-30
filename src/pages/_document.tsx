@@ -5,9 +5,11 @@ import Document, {
   NextScript,
   DocumentContext,
   DocumentInitialProps,
-} from 'next/document';
-import React from 'react';
-import { ServerStyleSheet } from 'styled-components';
+} from "next/document";
+import React from "react";
+import { ServerStyleSheet } from "styled-components";
+import { ColorModeScript } from "@chakra-ui/react";
+import theme from "../shared/styles/theme";
 
 export default class MyDocument extends Document<any> {
   static async getInitialProps(
@@ -46,7 +48,8 @@ export default class MyDocument extends Document<any> {
     return (
       <Html lang="en">
         <Head>{this.props.styleTags /*rendering the actual stylesheet*/}</Head>
-        <body className="font-light">
+        <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
