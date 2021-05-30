@@ -33,6 +33,7 @@ const theme = extendTheme({
       body: {
         color: mode(colorPalette.dark, colorPalette.light)(props),
         bg: mode(colorPalette.light, colorPalette.dark)(props),
+        height: "100vh",
       },
       h1: {
         fontSize: "4xl",
