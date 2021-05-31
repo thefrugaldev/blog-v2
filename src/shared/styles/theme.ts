@@ -35,6 +35,9 @@ const theme = extendTheme({
         bg: mode(colorPalette.light, colorPalette.dark)(props),
         height: "100vh",
       },
+      "h1, h2, h3, h4, h5, h6": {
+        fontWeight: 700,
+      },
       h1: {
         fontSize: "4xl",
       },

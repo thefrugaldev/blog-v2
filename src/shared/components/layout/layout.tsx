@@ -3,6 +3,7 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import Header from "./components/header/header";
 import { css, Global } from "@emotion/react";
 import { prismDarkTheme, prismLightTheme } from "../../styles/prism";
+import { Box, Container } from "@chakra-ui/layout";
 
 const Layout: FC = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -14,12 +15,10 @@ const Layout: FC = ({ children }) => {
           ${colorMode === "light" ? prismLightTheme : prismDarkTheme}
         `}
       />
-      <div>
-        <div className="max-w-screen-lg m-auto h-screen">
-          <Header />
-          <main>{children}</main>
-        </div>
-      </div>
+      <Container maxW="container.lg">
+        <Header />
+        <main>{children}</main>
+      </Container>
     </>
   );
 };
