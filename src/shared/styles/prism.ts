@@ -1,7 +1,60 @@
 import { css } from "@emotion/react";
 // import { theme } from "@chakra-ui/react";
 
+const prismPlugins = css`
+  pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+  }
+
+  pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+  }
+
+  .line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+  }
+
+  .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
+`;
+
+const basePrismTheme = css`
+  @import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-family: "Oxygen Mono", monospace;
+  }
+`;
+
 export const prismDarkTheme = css`
+  ${basePrismTheme};
+  ${prismPlugins};
   code[class*="language-"],
   pre[class*="language-"] {
     text-align: left;
@@ -11,7 +64,6 @@ export const prismDarkTheme = css`
     word-wrap: normal;
     color: #eee;
     background: #2f2f2f;
-    font-family: Roboto Mono, monospace;
     font-size: 1em;
     line-height: 1.5em;
 
@@ -219,7 +271,6 @@ export const prismLightTheme = css`
     word-wrap: normal;
     color: #90a4ae;
     background: #fafafa;
-    font-family: Roboto Mono, monospace;
     font-size: 1em;
     line-height: 1.5em;
 

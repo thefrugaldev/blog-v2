@@ -1,6 +1,5 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import { prismLightTheme, prismDarkTheme } from "./prism";
 
 const config: ThemeConfig = {
   // useSystemColorMode: true,
