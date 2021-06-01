@@ -49,21 +49,12 @@ const basePrismTheme = css`
   code[class*="language-"],
   pre[class*="language-"] {
     font-family: "Oxygen Mono", monospace;
-  }
-`;
-
-export const prismDarkTheme = css`
-  ${basePrismTheme};
-  ${prismPlugins};
-  code[class*="language-"],
-  pre[class*="language-"] {
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    color: #eee;
-    background: #2f2f2f;
+
     font-size: 1em;
     line-height: 1.5em;
 
@@ -75,6 +66,34 @@ export const prismDarkTheme = css`
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+  }
+
+  :not(pre) > code[class*="language-"] {
+    white-space: normal;
+    border-radius: 0.2em;
+    padding: 0.1em;
+  }
+
+  pre[class*="language-"] {
+    overflow: auto;
+    position: relative;
+    margin: 0.5em 0;
+    padding: 1.25em 1em;
+  }
+
+  [class*="language-"] .namespace {
+    opacity: 0.7;
+  }
+`;
+
+export const prismDarkTheme = css`
+  ${basePrismTheme};
+  ${prismPlugins};
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: #eee;
+    background: #2f2f2f;
   }
 
   code[class*="language-"]::-moz-selection,
@@ -91,27 +110,10 @@ export const prismDarkTheme = css`
     background: #363636;
   }
 
-  :not(pre) > code[class*="language-"] {
-    white-space: normal;
-    border-radius: 0.2em;
-    padding: 0.1em;
-  }
-
-  pre[class*="language-"] {
-    overflow: auto;
-    position: relative;
-    margin: 0.5em 0;
-    padding: 1.25em 1em;
-  }
-
   .language-css > code,
   .language-sass > code,
   .language-scss > code {
     color: #fd9170;
-  }
-
-  [class*="language-"] .namespace {
-    opacity: 0.7;
   }
 
   .token.atrule {
@@ -262,26 +264,13 @@ export const prismDarkTheme = css`
 `;
 
 export const prismLightTheme = css`
+  ${basePrismTheme};
+  ${prismPlugins};
+
   code[class*="language-"],
   pre[class*="language-"] {
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
     color: #90a4ae;
     background: #fafafa;
-    font-size: 1em;
-    line-height: 1.5em;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
   }
 
   code[class*="language-"]::-moz-selection,
@@ -300,27 +289,10 @@ export const prismLightTheme = css`
     color: #263238;
   }
 
-  :not(pre) > code[class*="language-"] {
-    white-space: normal;
-    border-radius: 0.2em;
-    padding: 0.1em;
-  }
-
-  pre[class*="language-"] {
-    overflow: auto;
-    position: relative;
-    margin: 0.5em 0;
-    padding: 1.25em 1em;
-  }
-
   .language-css > code,
   .language-sass > code,
   .language-scss > code {
     color: #f76d47;
-  }
-
-  [class*="language-"] .namespace {
-    opacity: 0.7;
   }
 
   .token.atrule {
