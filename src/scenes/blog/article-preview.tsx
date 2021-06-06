@@ -1,16 +1,13 @@
-import Link from 'next/link';
-import React, { FC } from 'react';
-import { Post } from '../../interfaces/post';
+import { Box } from "@chakra-ui/layout";
+import Link from "next/link";
+import React, { FC } from "react";
+import { Post } from "../../interfaces/post";
 
 const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
   const title = post.frontmatter.title || post.slug;
 
   return (
-    <article
-      className="border-2 border-light p-10 rounded-lg"
-      itemScope
-      itemType="http://schema.org/Article"
-    >
+    <Box as="article" pb={10} itemScope itemType="http://schema.org/Article">
       <header>
         <h2>
           <Link href={`/blog/${post.slug}`}>
@@ -29,7 +26,7 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
           itemProp="description"
         />
       </section>
-    </article>
+    </Box>
   );
 };
 

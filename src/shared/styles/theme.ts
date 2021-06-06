@@ -24,6 +24,9 @@ const theme = extendTheme({
   fonts: {
     body: "Martel Sans, sans-serif",
   },
+  colors: {
+    brand: colorPalette,
+  },
   styles: {
     "*, *::after, *::before": {
       boxSizing: "border-box",
