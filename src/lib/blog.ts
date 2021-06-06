@@ -1,16 +1,16 @@
-import matter from 'gray-matter';
-import { parseISO, format, compareAsc } from 'date-fns';
-import fs from 'fs';
-import { join } from 'path';
+import matter from "gray-matter";
+import { parseISO, format, compareAsc } from "date-fns";
+import fs from "fs";
+import { join } from "path";
 
-const postsDirectory = join(process.cwd(), 'content', 'blog');
+const postsDirectory = join(process.cwd(), "content", "blog");
 
 export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.mdx$/, '');
+  const realSlug = slug.replace(/\.mdx$/, "");
   const fullPath = join(postsDirectory, realSlug, `index.mdx`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-  const date = format(parseISO(data.date), 'MMMM dd, yyyy');
+  const date = format(parseISO(data.date), "MMMM dd, yyyy");
 
   return { slug: realSlug, frontmatter: { ...data, date }, content };
 }
@@ -18,7 +18,7 @@ export function getPostBySlug(slug: string) {
 export function getAllPosts() {
   const slugs = fs.readdirSync(postsDirectory);
   const posts = slugs
-    .filter((slug) => !slug.toUpperCase().includes('DRAFT_'))
+    .filter((slug) => !slug.toUpperCase().includes("DRAFT_"))
     .map((slug) => getPostBySlug(slug));
 
   return posts;

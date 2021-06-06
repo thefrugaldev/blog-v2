@@ -1,3 +1,4 @@
+import { Image } from "@chakra-ui/image";
 import { Box } from "@chakra-ui/layout";
 import Link from "next/link";
 import React, { FC } from "react";
@@ -8,6 +9,14 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
 
   return (
     <Box as="article" pb={10} itemScope itemType="http://schema.org/Article">
+      <Image
+        src={post.frontmatter.cover}
+        w={"100%"}
+        h={250}
+        objectFit="cover"
+        itemProp="image"
+        mb={2}
+      />
       <header>
         <h2>
           <Link href={`/blog/${post.slug}`}>

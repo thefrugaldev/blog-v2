@@ -3,7 +3,7 @@ title: Disjoint-Set/Union-Find Data Structure
 published: true
 date: "2020-05-01"
 tags: ["technology", "data structures", "algorithms"]
-unsplash-image-id: "LjqARJaJotc"
+cover: "https://source.unsplash.com/LjqARJaJotc/"
 series: ["data-structures-and-algorithms"]
 description: "A disjoint-set, or union-find as it's also commonly referred, is a data structure that tracks a set of elements partitioned into a group of discontinuous subsets. In this post, I'll highlight a few algorithms that may come in handy when dealing with these types of data structures."
 ---
@@ -40,34 +40,34 @@ A [**_disjoint-set_**](https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 ### Quick Find Implementation
 
 ```typescript
-import DisjointSet from "./DisjointSet"
+import DisjointSet from "./DisjointSet";
 
 class QuickFind implements DisjointSet {
-  disjointSet: number[]
+  disjointSet: number[];
 
   constructor(quantity: number) {
-    this.disjointSet = []
+    this.disjointSet = [];
 
-    for (let i = 0; i < quantity; i++) this.disjointSet[i] = i
+    for (let i = 0; i < quantity; i++) this.disjointSet[i] = i;
   }
 
   connected = (p: number, q: number): boolean => {
-    return this.disjointSet[p] === q
-  }
+    return this.disjointSet[p] === q;
+  };
 
   union = (p: number, q: number): void => {
-    const pid = this.disjointSet[p]
-    const qid = this.disjointSet[q]
+    const pid = this.disjointSet[p];
+    const qid = this.disjointSet[q];
 
     this.disjointSet.forEach((value, index) => {
       if (value === pid) {
-        this.disjointSet[index] = qid
+        this.disjointSet[index] = qid;
       }
-    })
-  }
+    });
+  };
 }
 
-export default QuickFind
+export default QuickFind;
 ```
 
 ## **Quick Union**
@@ -86,44 +86,44 @@ export default QuickFind
 ### Quick Union Implementation
 
 ```typescript
-import DisjointSet from "./DisjointSet"
+import DisjointSet from "./DisjointSet";
 
 class QuickUnion implements DisjointSet {
-  disjointSet: number[]
+  disjointSet: number[];
 
   constructor(quantity: number) {
-    this.disjointSet = []
+    this.disjointSet = [];
 
-    for (let i = 0; i < quantity; i++) this.disjointSet[i] = i
+    for (let i = 0; i < quantity; i++) this.disjointSet[i] = i;
   }
 
   private root(valueToCheck: number): number {
     while (this.disjointSet[valueToCheck] !== valueToCheck) {
-      valueToCheck = this.disjointSet[valueToCheck]
+      valueToCheck = this.disjointSet[valueToCheck];
     }
 
-    return valueToCheck
+    return valueToCheck;
   }
 
   private isDirectChild(p: number, q: number): boolean {
-    return this.disjointSet[p] === q
+    return this.disjointSet[p] === q;
   }
 
   connected(p: number, q: number): boolean {
-    if (this.isDirectChild(p, q)) return true
+    if (this.isDirectChild(p, q)) return true;
 
-    return this.root(p) === this.root(q)
+    return this.root(p) === this.root(q);
   }
 
   union(p: number, q: number): void {
-    const rootP = this.root(p)
-    const rootQ = this.root(q)
+    const rootP = this.root(p);
+    const rootQ = this.root(q);
 
-    this.disjointSet[rootP] = rootQ
+    this.disjointSet[rootP] = rootQ;
   }
 }
 
-export default QuickUnion
+export default QuickUnion;
 ```
 
 ## Improvements to Quick Union
@@ -146,57 +146,57 @@ export default QuickUnion
 For the weighted quick union implementation, you can see below that our **_Find_** query remains the same. For the **_Union_** operation, however, we are incrementing the size of the larger root by the size of the smaller root.
 
 ```typescript
-import DisjointSet from "./DisjointSet"
+import DisjointSet from "./DisjointSet";
 
 class WeightedQuickUnion implements DisjointSet {
-  disjointSet: number[]
-  size: number[]
+  disjointSet: number[];
+  size: number[];
 
   constructor(quantity: number) {
-    this.disjointSet = []
-    this.size = []
+    this.disjointSet = [];
+    this.size = [];
 
     for (let i = 0; i < quantity; i++) {
-      this.disjointSet[i] = i
-      this.size[i] = 1
+      this.disjointSet[i] = i;
+      this.size[i] = 1;
     }
   }
 
   private root(valueToCheck: number): number {
     while (this.disjointSet[valueToCheck] !== valueToCheck) {
-      valueToCheck = this.disjointSet[valueToCheck]
+      valueToCheck = this.disjointSet[valueToCheck];
     }
 
-    return valueToCheck
+    return valueToCheck;
   }
 
   private isDirectChild(p: number, q: number): boolean {
-    return this.disjointSet[p] === this.disjointSet[q]
+    return this.disjointSet[p] === this.disjointSet[q];
   }
 
   connected(p: number, q: number): boolean {
-    if (this.isDirectChild(p, q)) return true
+    if (this.isDirectChild(p, q)) return true;
 
-    return this.root(p) === this.root(q)
+    return this.root(p) === this.root(q);
   }
 
   union(p: number, q: number): void {
-    const rootP = this.root(p)
-    const rootQ = this.root(q)
+    const rootP = this.root(p);
+    const rootQ = this.root(q);
 
-    if (rootP === rootQ) return
+    if (rootP === rootQ) return;
 
     if (this.size[rootP] <= this.size[rootQ]) {
-      this.disjointSet[rootP] = rootQ
-      this.size[rootQ] += this.size[rootP]
+      this.disjointSet[rootP] = rootQ;
+      this.size[rootQ] += this.size[rootP];
     } else {
-      this.disjointSet[rootQ] = rootP
-      this.size[rootP] += this.size[rootQ]
+      this.disjointSet[rootQ] = rootP;
+      this.size[rootP] += this.size[rootQ];
     }
   }
 }
 
-export default WeightedQuickUnion
+export default WeightedQuickUnion;
 ```
 
 ## Weighted Quick Union with Path Compression
