@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import DarkModeToggle from "../dark-mode-toggle/dark-mode-toggle";
-import HeaderItem from "./header-item";
+import HeaderItem from "./components/header-item/header-item";
 
 const Header = () => {
   return (

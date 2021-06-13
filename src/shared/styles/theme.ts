@@ -23,6 +23,7 @@ const theme = extendTheme({
   config,
   fonts: {
     body: "Martel Sans, sans-serif",
+    heading: "Martel Sans, sans-serif",
   },
   colors: {
     brand: colorPalette,

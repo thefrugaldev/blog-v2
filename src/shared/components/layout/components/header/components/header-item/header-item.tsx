@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React, { FC } from "react";
 
-const HeaderItem: FC<{ name: string; route: string }> = ({ name, route }) => {
+interface HeaderItemProps {
+  name: string;
+  route: string;
+}
+
+const HeaderItem: FC<HeaderItemProps> = ({ name, route }) => {
   return (
     <Link href={`${route}`}>
       <a>
