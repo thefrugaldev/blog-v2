@@ -8,7 +8,6 @@ const UsesPage: FC = () => {
 
   return (
     <Layout>
-      <Heading as="h1">Current Setup</Heading>
       <Box>
         <Heading as="h2" fontSize="2xl">
           Integrated Development Environment

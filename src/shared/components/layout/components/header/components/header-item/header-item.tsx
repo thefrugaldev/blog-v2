@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Link as ChakraLink } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface HeaderItemProps {
@@ -9,9 +10,9 @@ interface HeaderItemProps {
 const HeaderItem: FC<HeaderItemProps> = ({ name, route }) => {
   return (
     <Link href={`${route}`}>
-      <a>
+      <ChakraLink _hover={{ textDecor: "none" }}>
         <span>{name}</span>
-      </a>
+      </ChakraLink>
     </Link>
   );
 };

@@ -1,19 +1,24 @@
-import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
+import Link from "next/link";
+import { Box, Flex, Image, Link as ChakraLink, Stack } from "@chakra-ui/react";
 import DarkModeToggle from "../dark-mode-toggle/dark-mode-toggle";
 import HeaderItem from "./components/header-item/header-item";
 
 const Header = () => {
   return (
     <header>
-      <Flex justifyContent="space-between">
-        <Box>
-          <HeaderItem name="Home Page" route={"/"} />
+      <Flex justifyContent="space-between" alignItems="center" my="6">
+        <Stack direction="row" alignItems="center" spacing="12">
+          <Link href="/">
+            <ChakraLink>
+              <Image src="/logo.png" boxSize="50px" />
+            </ChakraLink>
+          </Link>
           <HeaderItem name="Blog" route={"/blog"} />
-          <HeaderItem name="Uses" route={"/uses"} />
-          <HeaderItem name="Projects" route={"/projects"} />
+          <HeaderItem name="My Setup" route={"/setup"} />
+          {/* <HeaderItem name="Projects" route={"/projects"} /> */}
           <HeaderItem name="About" route={"/about"} />
-        </Box>
+        </Stack>
         <Box>
           <DarkModeToggle />
         </Box>

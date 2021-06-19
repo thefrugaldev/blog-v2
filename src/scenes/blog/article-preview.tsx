@@ -9,14 +9,19 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
 
   return (
     <Box as="article" pb={10} itemScope itemType="http://schema.org/Article">
-      <Image
-        src={post.frontmatter.cover}
-        w={"100%"}
-        h={250}
-        objectFit="cover"
-        itemProp="image"
-        mb={2}
-      />
+      <Link href={`/blog/${post.slug}`}>
+        <a itemProp="url">
+          <Image
+            src={post.frontmatter.cover}
+            w={"100%"}
+            h={250}
+            objectFit="cover"
+            itemProp="image"
+            mb={2}
+            borderRadius="md"
+          />
+        </a>
+      </Link>
       <header>
         <h2>
           <Link href={`/blog/${post.slug}`}>
