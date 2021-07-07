@@ -12,7 +12,7 @@ description: "A disjoint-set, or union-find as it's also commonly referred, is a
 
 A [**_disjoint-set_**](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) (also referred to as a _union-find_ data structure) is a data structure that tracks a set of elements partitioned into a group of disjoint subsets (also known as [_connected components_](<https://en.wikipedia.org/wiki/Component_(graph_theory)>)). Given this type of data structure, there are multiple algorithms that can be used to solve the two major equations for a disjoint-set, the **_Union_** command and the **_Find_** query, which we'll go into more detail below.
 
-![Connected Components](./connected-components-illustration.svg "Connected components illustration")
+![Connected Components](connected-components-illustration.svg "Connected components illustration")
 
 ## **Dynamic Connectivity**
 
@@ -23,7 +23,7 @@ A [**_disjoint-set_**](https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 
 ### Union-Find Illustration
 
-![Union-Find](./union-find-illustration.svg "Union find illustration")
+![Union-Find](union-find-illustration.svg "Union find illustration")
 
 ## **Quick Find**
 
@@ -35,7 +35,7 @@ A [**_disjoint-set_**](https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 
 ### Quick Find Illustration
 
-![Quick-Find Illustration](./quick-find-illustration.svg "Quick find illustration")
+![Quick-Find Illustration](quick-find-illustration.svg "Quick find illustration")
 
 ### Quick Find Implementation
 
@@ -81,7 +81,7 @@ export default QuickFind;
 
 ### Quick Union Illustration
 
-![Quick-Union Illustration](./quick-union-illustration.svg "Quick union illustration")
+![Quick-Union Illustration](quick-union-illustration.svg "Quick union illustration")
 
 ### Quick Union Implementation
 
@@ -135,11 +135,11 @@ export default QuickUnion;
   - The **_Find_** query takes the time proportional to the depth of _p_ and _q_.
     - Because we are always setting the root of the smaller tree to that of the larger tree, the depth of any node is **_at most_** _log N_ (where N is the number of nodes in the overall tree).
 
-![Weighted Quick-Union Tree Comparison](./weighted-quick-union-tree-comparison.svg "Weighted quick union tree comparison")
+![Weighted Quick-Union Tree Comparison](weighted-quick-union-tree-comparison.svg "Weighted quick union tree comparison")
 
 ### Weighted Quick Union Illustration
 
-![Weighted Quick-Union Illustration](./weighted-quick-union-illustration.svg "Weighted quick union illustration")
+![Weighted Quick-Union Illustration](weighted-quick-union-illustration.svg "Weighted quick union illustration")
 
 ### Weighted Quick Union Implementation
 
@@ -207,7 +207,7 @@ export default WeightedQuickUnion;
 
 ### Weighted Quick Union with Path Compression Illustration
 
-![Weighted Quick-Union with Path Compression Illustration](./weighted-quick-union-path-compression-illustration.svg "Weighted quick union with path compression illustration")
+![Weighted Quick-Union with Path Compression Illustration](weighted-quick-union-path-compression-illustration.svg "Weighted quick union with path compression illustration")
 
 ### Weighted QU with Path Compression Implementation
 

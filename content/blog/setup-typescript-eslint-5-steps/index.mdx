@@ -33,7 +33,7 @@ This creates your eslint configuration file where you can specify rules, options
 
 **4)** Add a `lint` script to your `package.json` file that was created in step 1.
 
-```
+```json
 "scripts": {
   "lint": "eslint --ext .ts ."
 }
@@ -45,7 +45,7 @@ Thats it! I hope this quick reference guide served useful to you as you begin to
 
 > **Quick Note**: if you're extending the `airbnb-typescript` configuration, you may run across the following error:
 >
-> ```
+> ```bash
 > Error: Error while loading rule '@typescript-eslint/dot-notation': You have used a rule which requires parserServices to be generated.
 > ```
 >

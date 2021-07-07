@@ -9,8 +9,22 @@ import SEO from "../../shared/components/seo/seo";
 import { Post } from "../../interfaces/post";
 import { Image } from "@chakra-ui/image";
 
-const BlogPostPage: FC<Post> = ({ frontmatter, source, excerpt }) => {
-  const content = hydrate(source);
+const components = (slug: string) => ({
+  h1: ({ children }) => <h1>{children}</h1>,
+  img: ({ src, alt }) => {
+    return (
+      <img
+        alt={alt}
+        src={require(`../../../content/blog/${slug}/${src}`).default}
+      />
+    );
+  },
+});
+
+const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
+  const content = hydrate(source, {
+    components: components(slug),
+  });
 
   return (
     <Layout>
@@ -35,7 +49,8 @@ const BlogPostPage: FC<Post> = ({ frontmatter, source, excerpt }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params.slug as string);
-  const source = await markdownToHtml(post.content || "");
+  const images = components(params.slug as string);
+  const source = await markdownToHtml(post.content || "", images);
 
   return {
     props: {

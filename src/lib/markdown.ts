@@ -1,13 +1,12 @@
-import rehypePrism from "@mapbox/rehype-prism";
 import renderToString from "next-mdx-remote/render-to-string";
 import remarkPrism from "remark-prism";
 
-const markdownToHtml = async (markdown: any) => {
+const markdownToHtml = async (markdown: any, components: any) => {
   const mdxSource = await renderToString(markdown, {
+    components,
     mdxOptions: {
       remarkPlugins: [[remarkPrism, { plugins: ["line-numbers"] }]],
     },
-    // scope: frontmatter
   });
 
   return mdxSource;
