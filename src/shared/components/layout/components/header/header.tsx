@@ -11,7 +11,7 @@ const Header = () => {
         <Stack direction="row" alignItems="center" spacing="12">
           <Link href="/">
             <ChakraLink>
-              <Image src="/logo.png" boxSize="50px" />
+              <Image src="/logo.png" boxSize="35px" />
             </ChakraLink>
           </Link>
           <HeaderItem name="Blog" route={"/blog"} />

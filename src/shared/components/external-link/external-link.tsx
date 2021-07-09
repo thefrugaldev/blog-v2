@@ -6,12 +6,23 @@ import { BiLinkExternal } from "react-icons/bi";
 interface ExternalLinkProps {
   linkText: string;
   route: string;
+  includeIcon?: boolean;
 }
 
-const ExternalLink: FC<ExternalLinkProps> = ({ linkText, route }) => {
+const ExternalLink: FC<ExternalLinkProps> = ({
+  linkText,
+  route,
+  includeIcon = true,
+}) => {
   return (
-    <Link href={`{route}`} isExternal>
-      {linkText} <Icon as={BiLinkExternal} />
+    <Link href={`${route}`} isExternal>
+      {linkText}
+      {includeIcon && (
+        <>
+          {" "}
+          <Icon as={BiLinkExternal} />
+        </>
+      )}
     </Link>
   );
 };

@@ -1,4 +1,5 @@
-import "@fontsource/martel-sans";
+import "@fontsource/montserrat";
+import "@fontsource/nunito-sans";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";

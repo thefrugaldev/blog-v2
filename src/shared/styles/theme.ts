@@ -16,14 +16,22 @@ const colorPalette = {
   // warning: "#EC9D09",
   // darkWarning: "#F8B53A",
   light: "#FEFEFE",
-  dark: "#0E2430",
+  dark: "#001628",
+  darkMode: {
+    link: "#6DECAF",
+    linkHover: "#59DEC9",
+  },
+  lightMode: {
+    link: "#5379b5",
+    linkHover: "#001628",
+  },
 };
 
 const theme = extendTheme({
   config,
   fonts: {
-    body: "Martel Sans, sans-serif",
-    heading: "Martel Sans, sans-serif",
+    body: "Nunito Sans,sans-serif",
+    heading: "Montserrat,sans-serif",
   },
   colors: {
     brand: colorPalette,
@@ -50,7 +58,36 @@ const theme = extendTheme({
       "h3, h4, h5, h6": {
         fontSize: "xl",
       },
+      a: {
+        color: mode(
+          colorPalette.lightMode.link,
+          colorPalette.darkMode.link
+        )(props),
+        "&:hover": {
+          color: mode(
+            colorPalette.lightMode.linkHover,
+            colorPalette.darkMode.linkHover
+          )(props),
+        },
+      },
     }),
+  },
+  components: {
+    Link: {
+      baseStyle: (props) => ({
+        color: mode(
+          colorPalette.lightMode.link,
+          colorPalette.darkMode.link
+        )(props),
+        "&:hover": {
+          color: mode(
+            colorPalette.lightMode.linkHover,
+            colorPalette.darkMode.linkHover
+          )(props),
+          textDecoration: "none",
+        },
+      }),
+    },
   },
 });
 
