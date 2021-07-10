@@ -20,17 +20,21 @@ const colorPalette = {
   darkMode: {
     link: "#6DECAF",
     linkHover: "#59DEC9",
+    codeBg: "#2F2F2F",
+    code: "#EEE",
   },
   lightMode: {
     link: "#5379b5",
     linkHover: "#001628",
+    codeBg: "#FAFAFA",
+    code: "#90A4AE",
   },
 };
 
 const theme = extendTheme({
   config,
   fonts: {
-    body: "Nunito Sans,sans-serif",
+    body: "Montserrat,sans-serif",
     heading: "Montserrat,sans-serif",
   },
   colors: {
@@ -41,10 +45,22 @@ const theme = extendTheme({
       boxSizing: "border-box",
     },
     global: (props) => ({
+      ":not(pre) > code": {
+        bg: mode(
+          colorPalette.lightMode.codeBg,
+          colorPalette.darkMode.codeBg
+        )(props),
+        color: mode(
+          colorPalette.lightMode.code,
+          colorPalette.darkMode.code
+        )(props),
+        px: 1.5,
+      },
       body: {
         color: mode(colorPalette.dark, colorPalette.light)(props),
         bg: mode(colorPalette.light, colorPalette.dark)(props),
         height: "100vh",
+        lineHeight: "1.75",
       },
       "h1, h2, h3, h4, h5, h6": {
         fontWeight: 700,

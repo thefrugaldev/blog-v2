@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { Image } from "@chakra-ui/image";
 import Layout from "../shared/components/layout";
 import { Heading, Text, VStack } from "@chakra-ui/layout";
+import ExternalLink from "../shared/components/external-link";
+import SiteConfig from "../config";
 
 const AboutPage: FC = () => {
   return (
@@ -23,8 +25,25 @@ const AboutPage: FC = () => {
           primarily dabble in the .Net and JavaScript realm, but always enjoy
           learning new things (which is why I made this blog 😄). Other hobbies
           include personal finance, bourbon, and sports (I'm a huge Georgia
-          Bulldogs 🐶 fan). Feel free to reach out to me on Twitter, Github, or
-          LinkedIn.
+          Bulldogs 🐶 fan). Feel free to reach out to me on{" "}
+          <ExternalLink
+            route={`https://www.github.com/${SiteConfig.social.github}`}
+            linkText="GitHub"
+            includeIcon={false}
+          />
+          ,{" "}
+          <ExternalLink
+            route={`https://twitter.com/${SiteConfig.social.twitter}`}
+            linkText="Twitter"
+            includeIcon={false}
+          />
+          , or{" "}
+          <ExternalLink
+            route={`https://www.linkedin.com/in/${SiteConfig.social.linkedIn}`}
+            linkText="LinkedIn"
+            includeIcon={false}
+          />{" "}
+          .
         </Text>
       </VStack>
     </Layout>

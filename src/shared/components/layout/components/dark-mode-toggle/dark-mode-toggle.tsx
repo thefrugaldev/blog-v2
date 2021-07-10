@@ -48,7 +48,7 @@ const DarkModeToggle: FC = () => {
   return (
     <IconButton
       as={GiBedLamp}
-      size="md"
+      size="sm"
       fontSize="lg"
       aria-label={`Switch to ${colorModeValue} mode`}
       color="current"

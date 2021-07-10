@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Link as ChakraLink, useColorMode } from "@chakra-ui/react";
+import { Link as ChakraLink, Text, useColorMode } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface HeaderItemProps {
@@ -15,7 +15,9 @@ const HeaderItem: FC<HeaderItemProps> = ({ name, route }) => {
   return (
     <Link href={`${route}`}>
       <ChakraLink color={linkTextColor}>
-        <span>{name}</span>
+        <Text as="span" fontWeight="bold">
+          {name}
+        </Text>
       </ChakraLink>
     </Link>
   );

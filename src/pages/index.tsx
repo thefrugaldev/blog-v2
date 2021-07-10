@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Text } from "@chakra-ui/react";
+import { Center, Divider, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import Layout from "../shared/components/layout";
 import ExternalLink from "../shared/components/external-link";
@@ -8,8 +8,11 @@ import SiteConfig from "../config";
 const HomePage: FC = () => {
   return (
     <Layout>
-      <h1>Welcome to the homepage!</h1>
-      <Text>
+      <Center>
+        <Heading mb={`1.5rem`}>The Frugal Dev</Heading>
+      </Center>
+      <Divider />
+      <Text mt={`1.5rem`}>
         Welcome! My name is{" "}
         <Link href="/about">
           <a itemProp="url">Clayton</a>
