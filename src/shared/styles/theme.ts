@@ -6,7 +6,7 @@ const config: ThemeConfig = {
   initialColorMode: "dark",
 };
 
-const colorPalette = {
+export const colorPalette = {
   // primary: "#F8425F",
   // subhead: "#FFEC41",
   // info: "#7932EC",
@@ -61,7 +61,7 @@ const theme = extendTheme({
         color: mode(colorPalette.darkMode.bg, colorPalette.lightMode.bg)(props),
         bg: mode(colorPalette.lightMode.bg, colorPalette.darkMode.bg)(props),
         height: "100vh",
-        lineHeight: "1.75",
+        lineHeight: "2.25",
       },
       "h1, h2, h3, h4, h5, h6": {
         fontWeight: 700,

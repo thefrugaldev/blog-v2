@@ -9,27 +9,11 @@ import SEO from "@shared/components/seo/seo";
 import { Post } from "@shared/interfaces/post";
 import { Image } from "@chakra-ui/image";
 import { Box, Heading, Text } from "@chakra-ui/react";
-import BlockQuote from "@shared/components/layout/components/blockquote/blockquote";
-import { BlogImage } from "@scenes/blog";
-
-const components = (slug: string) => ({
-  h1: ({ children }) => <h1>{children}</h1>,
-  img: ({ src, alt }) => {
-    return (
-      <BlogImage
-        alt={alt}
-        src={require(`../../../content/blog/${slug}/${src}`).default}
-      />
-    );
-  },
-  blockquote: ({ children }) => (
-    <BlockQuote children={children} heading={"Quick Note"} emojiPrefix={"📝"} />
-  ),
-});
+import { mdxComponents } from "@scenes/blog";
 
 const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
   const content = hydrate(source, {
-    components: components(slug),
+    components: mdxComponents(slug),
   });
 
   return (
@@ -53,7 +37,7 @@ const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params.slug as string);
-  const images = components(params.slug as string);
+  const images = mdxComponents(params.slug as string);
   const source = await markdownToHtml(post.content || "", images);
 
   return {
