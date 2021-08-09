@@ -15,19 +15,19 @@ const colorPalette = {
   // darkSuccess: "#00CC88",
   // warning: "#EC9D09",
   // darkWarning: "#F8B53A",
-  light: "#FEFEFE",
-  dark: "#001628",
   darkMode: {
+    bg: "#001628",
     link: "#6DECAF",
     linkHover: "#59DEC9",
     codeBg: "#2F2F2F",
     code: "#EEE",
   },
   lightMode: {
-    link: "#5379b5",
+    bg: "#FEFEFE",
+    link: "#5379b5", // TODO: poor contrast
     linkHover: "#001628",
     codeBg: "#FAFAFA",
-    code: "#90A4AE",
+    code: "#90A4AE", // TODO: poor contrast
   },
 };
 
@@ -57,8 +57,8 @@ const theme = extendTheme({
         px: 1.5,
       },
       body: {
-        color: mode(colorPalette.dark, colorPalette.light)(props),
-        bg: mode(colorPalette.light, colorPalette.dark)(props),
+        color: mode(colorPalette.darkMode.bg, colorPalette.lightMode.bg)(props),
+        bg: mode(colorPalette.lightMode.bg, colorPalette.darkMode.bg)(props),
         height: "100vh",
         lineHeight: "1.75",
       },
@@ -103,6 +103,13 @@ const theme = extendTheme({
           textDecoration: "none",
         },
       }),
+    },
+    Heading: {
+      sizes: {
+        xl: {
+          lineHeight: "1.75",
+        },
+      },
     },
   },
 });

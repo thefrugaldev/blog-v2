@@ -8,6 +8,8 @@ import Layout from "../../shared/components/layout";
 import SEO from "../../shared/components/seo/seo";
 import { Post } from "../../interfaces/post";
 import { Image } from "@chakra-ui/image";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import BlockQuote from "../../shared/components/layout/components/blockquote/blockquote";
 
 const components = (slug: string) => ({
   h1: ({ children }) => <h1>{children}</h1>,
@@ -19,6 +21,9 @@ const components = (slug: string) => ({
       />
     );
   },
+  blockquote: ({ children }) => (
+    <BlockQuote children={children} emojiPrefix={"📝"} />
+  ),
 });
 
 const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
@@ -33,16 +38,15 @@ const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
         description={frontmatter.description || excerpt}
         image={frontmatter.cover}
       />
-      <article>
+      <Box as="article">
         <Image src={frontmatter.cover} h={300} w={"100%"} objectFit="cover" />
-        <header>
-          <h1>{frontmatter.title}</h1>
-          <p>{frontmatter.date}</p>
-        </header>
+        <Box as="header">
+          <Heading as="h1">{frontmatter.title}</Heading>
+          <Text>{frontmatter.date}</Text>
+        </Box>
         <section>{content}</section>
         <hr />
-        <footer>Bio component</footer>
-      </article>
+      </Box>
     </Layout>
   );
 };

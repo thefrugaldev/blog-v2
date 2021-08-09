@@ -1,3 +1,3 @@
-import Blog from './blog';
+import ArticlePreview from "./article-preview";
 
-export default Blog;
+export { ArticlePreview };
