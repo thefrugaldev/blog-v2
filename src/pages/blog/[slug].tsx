@@ -22,7 +22,7 @@ const components = (slug: string) => ({
     );
   },
   blockquote: ({ children }) => (
-    <BlockQuote children={children} emojiPrefix={"📝"} />
+    <BlockQuote children={children} heading={"Quick Note"} emojiPrefix={"📝"} />
   ),
 });
 
@@ -45,7 +45,6 @@ const BlogPostPage: FC<Post> = ({ source, frontmatter, slug, excerpt }) => {
           <Text>{frontmatter.date}</Text>
         </Box>
         <section>{content}</section>
-        <hr />
       </Box>
     </Layout>
   );

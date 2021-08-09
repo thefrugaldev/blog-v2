@@ -21,6 +21,7 @@ const colorPalette = {
     linkHover: "#59DEC9",
     codeBg: "#2F2F2F",
     code: "#EEE",
+    blockQuoteBg: "#00223D",
   },
   lightMode: {
     bg: "#FEFEFE",

@@ -9,7 +9,8 @@ interface HeaderItemProps {
 
 const HeaderItem: FC<HeaderItemProps> = ({ name, route }) => {
   const { colorMode } = useColorMode();
-  const linkTextColor = colorMode === "light" ? "brand.dark" : "brand.light";
+  const linkTextColor =
+    colorMode === "light" ? "brand.darkMode.bg" : "brand.lightMode.bg";
 
   1;
   return (
