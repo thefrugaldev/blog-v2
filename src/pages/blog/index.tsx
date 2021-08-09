@@ -5,7 +5,7 @@ import { getAllPostsByDate } from "@shared/lib/blog";
 import { Post } from "@shared/interfaces/post";
 import { ArticlePreview } from "@scenes/blog";
 import { Grid, GridItem } from "@chakra-ui/layout";
-import sharedStyles from "@shared/styles/global";
+import sharedStyles from "@shared/styles/shared";
 
 const BlogPage: FC<{ posts: Post[] }> = ({ posts }) => {
   return (

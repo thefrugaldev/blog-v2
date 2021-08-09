@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import Layout from "@shared/components/layout";
 import VsCodeExtensions from "@scenes/setup/components/vscode-extensions/vscode-extensions";
 import GithubCommitMessages from "@scenes/setup/components/github-commit-messages/github-commit-messages";
-import globalStyles from "@shared/styles/global";
+import sharedStyles from "@shared/styles/shared";
 
 const UsesPage: FC = () => {
   // TODO: Include link to my dotfiles?
@@ -11,7 +11,7 @@ const UsesPage: FC = () => {
 
   return (
     <Layout>
-      <Box mt={globalStyles.marginTopGap}>
+      <Box mt={sharedStyles.marginTopGap}>
         <VsCodeExtensions />
       </Box>
       <Box mt={10}>

@@ -5,7 +5,7 @@ import { Heading, Text, VStack } from "@chakra-ui/layout";
 import ExternalLink from "@shared/components/external-link";
 import SiteConfig from "../config";
 import { Container } from "@chakra-ui/react";
-import sharedStyles from "@shared/styles/global";
+import sharedStyles from "@shared/styles/shared";
 
 const AboutPage: FC = () => {
   return (
@@ -22,7 +22,7 @@ const AboutPage: FC = () => {
         <Heading as="h1" size="2xl">
           Clayton Orman
         </Heading>
-        <Container maxW="container.md">
+        <Container maxW="container.md" mt={10}>
           <Text>
             I'm a software developer with over 10 years of professional
             experience. I primarily dabble in the .Net and JavaScript realm, but
