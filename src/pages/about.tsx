@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Image } from "@chakra-ui/image";
-import Layout from "../shared/components/layout";
+import Layout from "@shared/components/layout";
 import { Heading, Text, VStack } from "@chakra-ui/layout";
-import ExternalLink from "../shared/components/external-link";
+import ExternalLink from "@shared/components/external-link";
 import SiteConfig from "../config";
 
 const AboutPage: FC = () => {

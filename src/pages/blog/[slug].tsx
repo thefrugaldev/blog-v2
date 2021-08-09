@@ -2,14 +2,14 @@ import React, { FC } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import hydrate from "next-mdx-remote/hydrate";
 
-import { getPostBySlug, getAllPosts } from "../../lib/blog";
-import markdownToHtml from "../../lib/markdown";
-import Layout from "../../shared/components/layout";
-import SEO from "../../shared/components/seo/seo";
-import { Post } from "../../interfaces/post";
+import { getPostBySlug, getAllPosts } from "@shared/lib/blog";
+import markdownToHtml from "@shared/lib/markdown";
+import Layout from "@shared/components/layout";
+import SEO from "@shared/components/seo/seo";
+import { Post } from "@shared/interfaces/post";
 import { Image } from "@chakra-ui/image";
 import { Box, Heading, Text } from "@chakra-ui/react";
-import BlockQuote from "../../shared/components/layout/components/blockquote/blockquote";
+import BlockQuote from "@shared/components/layout/components/blockquote/blockquote";
 
 const components = (slug: string) => ({
   h1: ({ children }) => <h1>{children}</h1>,

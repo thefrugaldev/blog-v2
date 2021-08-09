@@ -2,7 +2,7 @@ import { Image } from "@chakra-ui/image";
 import { Box } from "@chakra-ui/layout";
 import Link from "next/link";
 import React, { FC } from "react";
-import { Post } from "../../interfaces/post";
+import { Post } from "@shared/interfaces/post";
 
 const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
   const title = post.frontmatter.title || post.slug;

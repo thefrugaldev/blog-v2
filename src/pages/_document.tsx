@@ -9,7 +9,7 @@ import Document, {
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
 import { ColorModeScript } from "@chakra-ui/react";
-import theme from "../shared/styles/theme";
+import theme from "@shared/styles/theme";
 
 export default class MyDocument extends Document<any> {
   static async getInitialProps(

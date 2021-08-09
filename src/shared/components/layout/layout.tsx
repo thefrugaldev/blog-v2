@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useColorMode } from "@chakra-ui/color-mode";
 import Header from "./components/header/header";
 import { css, Global } from "@emotion/react";
-import { prismDarkTheme, prismLightTheme } from "../../styles/prism";
+import { prismDarkTheme, prismLightTheme } from "@shared/styles/prism";
 import { Box, Container } from "@chakra-ui/layout";
 
 const Layout: FC = ({ children }) => {

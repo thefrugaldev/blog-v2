@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Flex, Image, Link as ChakraLink, Stack } from "@chakra-ui/react";
-import DarkModeToggle from "../dark-mode-toggle/dark-mode-toggle";
+import DarkModeToggle from "./components/dark-mode-toggle/dark-mode-toggle";
 import HeaderItem from "./components/header-item/header-item";
 
 const Header = () => {

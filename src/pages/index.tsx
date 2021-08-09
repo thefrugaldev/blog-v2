@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Center, Divider, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import Layout from "../shared/components/layout";
-import ExternalLink from "../shared/components/external-link";
+import Layout from "@shared/components/layout";
+import ExternalLink from "@shared/components/external-link";
 import SiteConfig from "../config";
 
 const HomePage: FC = () => {

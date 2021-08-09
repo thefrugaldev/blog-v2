@@ -1,6 +1,5 @@
-import React, { FC, useState } from "react";
-import Layout from "../shared/components/layout";
-import DarkModeToggle from "../shared/components/layout/components/dark-mode-toggle/dark-mode-toggle";
+import React, { FC } from "react";
+import Layout from "@shared/components/layout";
 
 const DarkModeTestPage: FC = () => {
   return (

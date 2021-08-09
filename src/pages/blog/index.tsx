@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { GetStaticProps } from "next";
-import Layout from "../../shared/components/layout";
-import { getAllPostsByDate } from "../../lib/blog";
-import { Post } from "../../interfaces/post";
-import ArticlePreview from "../../scenes/blog/article-preview";
+import Layout from "@shared/components/layout";
+import { getAllPostsByDate } from "@shared/lib/blog";
+import { Post } from "@shared/interfaces/post";
+import ArticlePreview from "@scenes/blog/article-preview";
 import { Grid, GridItem } from "@chakra-ui/layout";
 
 const BlogPage: FC<{ posts: Post[] }> = ({ posts }) => {

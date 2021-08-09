@@ -1,7 +1,7 @@
 import { Box, Heading, ListItem, Text, UnorderedList } from "@chakra-ui/layout";
 import React, { FC } from "react";
-import ExternalLink from "../shared/components/external-link";
-import Layout from "../shared/components/layout";
+import ExternalLink from "@shared/components/external-link";
+import Layout from "@shared/components/layout";
 
 const UsesPage: FC = () => {
   // TODO: break out each section into a reusable component?

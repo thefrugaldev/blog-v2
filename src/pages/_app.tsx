@@ -4,7 +4,7 @@ import "@fontsource/nunito-sans";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { FC } from "react";
-import theme from "../shared/styles/theme";
+import theme from "@shared/styles/theme";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
