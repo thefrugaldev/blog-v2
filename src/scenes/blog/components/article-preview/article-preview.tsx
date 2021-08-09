@@ -30,7 +30,9 @@ const ArticlePreview: FC<{ post: Post }> = ({ post }) => {
             </a>
           </Link>
         </h2>
-        <small>{post.frontmatter.date}</small>
+        <small>
+          <strong>{post.frontmatter.date}</strong>
+        </small>
       </header>
       <section>
         <p

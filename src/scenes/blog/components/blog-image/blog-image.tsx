@@ -7,7 +7,7 @@ interface BlogImageProps {
 }
 
 const BlogImage: FC<BlogImageProps> = ({ src, alt }) => {
-  return <Image src={src} alt={alt} mx="auto" />;
+  return <Image src={src} alt={alt} m="25px auto" />;
 };
 
 export default BlogImage;
