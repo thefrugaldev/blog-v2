@@ -25,10 +25,11 @@ export const colorPalette = {
   },
   lightMode: {
     bg: "#FEFEFE",
-    link: "#5379b5", // TODO: poor contrast
-    linkHover: "#001628",
-    codeBg: "#FAFAFA",
-    code: "#90A4AE", // TODO: poor contrast
+    link: "#5A1FFF",
+    linkHover: "#7C4DFF",
+    codeBg: "#F5F5F5",
+    code: "#3C4B53",
+    blockQuoteBg: "#F5F5F5",
   },
 };
 

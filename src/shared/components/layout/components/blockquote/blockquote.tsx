@@ -13,7 +13,9 @@ const BlockQuote: FC<BlockQuoteProps> = ({
 }) => {
   const { colorMode } = useColorMode();
   const bgColor =
-    colorMode === "dark" ? "brand.darkMode.blockQuoteBg" : "brand.lightMode.bg";
+    colorMode === "dark"
+      ? "brand.darkMode.blockQuoteBg"
+      : "brand.lightMode.blockQuoteBg";
 
   return (
     <Box mt="2">
