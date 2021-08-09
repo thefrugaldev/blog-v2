@@ -20,7 +20,7 @@ export const colorPalette = {
     link: "#6DECAF",
     linkHover: "#59DEC9",
     codeBg: "#2F2F2F",
-    code: "#EEE",
+    code: "#EEEEEE",
     blockQuoteBg: "#00223D",
   },
   lightMode: {
@@ -29,7 +29,7 @@ export const colorPalette = {
     linkHover: "#7C4DFF",
     codeBg: "#F5F5F5",
     code: "#3C4B53",
-    blockQuoteBg: "#F5F5F5",
+    blockQuoteBg: "#EBEBEB",
   },
 };
 
