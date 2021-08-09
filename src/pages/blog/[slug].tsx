@@ -10,12 +10,13 @@ import { Post } from "@shared/interfaces/post";
 import { Image } from "@chakra-ui/image";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import BlockQuote from "@shared/components/layout/components/blockquote/blockquote";
+import { BlogImage } from "@scenes/blog";
 
 const components = (slug: string) => ({
   h1: ({ children }) => <h1>{children}</h1>,
   img: ({ src, alt }) => {
     return (
-      <img
+      <BlogImage
         alt={alt}
         src={require(`../../../content/blog/${slug}/${src}`).default}
       />

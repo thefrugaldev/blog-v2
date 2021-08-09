@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Layout from "@shared/components/layout";
 import { getAllPostsByDate } from "@shared/lib/blog";
 import { Post } from "@shared/interfaces/post";
-import ArticlePreview from "@scenes/blog/article-preview";
+import { ArticlePreview } from "@scenes/blog";
 import { Grid, GridItem } from "@chakra-ui/layout";
 
 const BlogPage: FC<{ posts: Post[] }> = ({ posts }) => {
