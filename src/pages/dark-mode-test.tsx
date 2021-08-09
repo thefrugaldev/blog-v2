@@ -1,14 +1,7 @@
-import React, { FC, useState } from 'react';
-import Layout from '../shared/components/layout';
-import DarkModeToggle from '../shared/components/layout/components/dark-mode-toggle/dark-mode-toggle';
+import React, { FC } from "react";
+import Layout from "@shared/components/layout";
 
 const DarkModeTestPage: FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const handleToggle = (isDarkMode: boolean) => {
-    setIsDarkMode(isDarkMode);
-  };
-
   return (
     <Layout>
       <h1 className="dark:text-primary">Dark Mode Test</h1>

@@ -1,3 +1,5 @@
-import Blog from './blog';
+import ArticlePreview from "./components/article-preview/article-preview";
+import BlogImage from "./components/blog-image/blog-image";
+import mdxComponents from "./mdx-components";
 
-export default Blog;
+export { ArticlePreview, BlogImage, mdxComponents };

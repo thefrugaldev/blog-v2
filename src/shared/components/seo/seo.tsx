@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import Head from 'next/head';
-import config from '../../../config';
+import React, { FC } from "react";
+import Head from "next/head";
+import config from "../../../config";
 
 const SEO: FC<{ description: string; title: string; image: string }> = ({
   description,
@@ -26,6 +26,7 @@ const SEO: FC<{ description: string; title: string; image: string }> = ({
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={metaDescription} />
       <meta property="twitter:image" content={metaImage} />
+      <link rel="shortcut icon" href="/favicon-32x32.png" />
     </Head>
   );
 };
