@@ -12,6 +12,14 @@ module.exports = {
         },
       ],
     });
+
+    config.externals = {
+      ...config.externals,
+      canvas: "canvas",
+      critters: "critters",
+    };
+
     return config;
   },
+  target: "serverless",
 };
