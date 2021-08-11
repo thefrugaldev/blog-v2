@@ -1,4 +1,5 @@
 module.exports = {
+  target: "serverless",
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(svg|png|jpe?g|gif|mp4)$/i,
@@ -13,13 +14,6 @@ module.exports = {
       ],
     });
 
-    config.externals = {
-      ...config.externals,
-      canvas: "canvas",
-      critters: "critters",
-    };
-
     return config;
   },
-  target: "serverless",
 };
