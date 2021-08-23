@@ -22,6 +22,7 @@ const Header = () => {
           <HeaderItem name="Blog" route={"/blog"} />
           <HeaderItem name="My Setup" route={"/setup"} />
           {/* <HeaderItem name="Projects" route={"/projects"} /> */}
+          <HeaderItem name="Snippets" route={"/snippets"} />
           <HeaderItem name="About" route={"/about"} />
         </Stack>
         <Box>
