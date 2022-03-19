@@ -33,19 +33,13 @@ const AboutPage: FC = () => {
               route={`https://www.github.com/${SiteConfig.social.github}`}
               linkText="GitHub"
               includeIcon={false}
-            />
-            ,{" "}
+            />{" "}
+            or{" "}
             <ExternalLink
               route={`https://twitter.com/${SiteConfig.social.twitter}`}
               linkText="Twitter"
               includeIcon={false}
             />
-            , or{" "}
-            <ExternalLink
-              route={`https://www.linkedin.com/in/${SiteConfig.social.linkedIn}`}
-              linkText="LinkedIn"
-              includeIcon={false}
-            />{" "}
             .
           </Text>
         </Container>
